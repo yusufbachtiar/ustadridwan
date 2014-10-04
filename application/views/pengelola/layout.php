@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Start Bootstrap - SB Admin Version 2.0 Demo</title>
+    <title>Ahmad Ridwan | <?php echo $title?></title>
 
     <!-- Core CSS - Include with every page -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>media/backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>media/backend/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Page-Level Plugin CSS - Blank -->
 
     <!-- SB Admin CSS - Include with every page -->
-    <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>media/backend/css/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -236,7 +236,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo site_url('auth/logout');?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -245,7 +245,7 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <?php include('left_menu.php');?>
+            <?php $this->load->view('pengelola/left_menu');?>
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -264,14 +264,14 @@
     <!-- /#wrapper -->
 
     <!-- Core Scripts - Include with every page -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<?php echo base_url()?>media/backend/js/jquery-1.10.2.js"></script>
+    <script src="<?php echo base_url()?>media/backend/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>media/backend/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 
     <!-- Page-Level Plugin Scripts - Blank -->
 
     <!-- SB Admin Scripts - Include with every page -->
-    <script src="js/sb-admin.js"></script>
+    <script src="<?php echo base_url()?>media/backend/js/sb-admin.js"></script>
 
     <!-- Page-Level Demo Scripts - Blank - Use for reference -->
 
