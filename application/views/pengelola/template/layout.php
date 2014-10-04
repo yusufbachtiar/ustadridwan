@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">Selamat Datang <?php echo $this->session->userdata('fullname')?></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -231,9 +231,9 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?php echo site_url('pengelola/user/profil')?>"><i class="fa fa-user fa-fw"></i> Profil</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="<?php echo site_url('pengelola/user/cpw')?>"><i class="fa fa-gear fa-fw"></i> Ubah Password</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="<?php echo site_url('auth/logout');?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -245,14 +245,15 @@
             </ul>
             <!-- /.navbar-top-links -->
 
-            <?php $this->load->view('pengelola/left_menu');?>
+            <?php $this->load->view('pengelola/template/left_menu');?>
             <!-- /.navbar-static-side -->
         </nav>
 
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Blank</h1>
+                    <h1 class="page-header"><?php echo $header;?></h1>
+                    <?php (isset($page)) ? $this->load->view($page) : null ;?>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

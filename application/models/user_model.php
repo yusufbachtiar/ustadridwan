@@ -2,9 +2,9 @@
 
 Class User_model extends CI_Model{
 
-	public function check_user($user, $pass){
-		$this->db->where('user_name', $user);
-		$this->db->where('user_password', sha1($pass));
+	public function check_user($param = array()){
+		$this->db->where('user_name', $param['username']);
+		$this->db->where('user_password', sha1($param['password']));
 		$res = $this->db->get('user')->num_rows();
 		if ($res > 0) {
 			return TRUE;
@@ -25,9 +25,40 @@ Class User_model extends CI_Model{
 		if (isset($param['password'])) {
 			$this->db->where('user_password', $param['password']);
 		}
+
+		if (isset($param['username']) OR isset($param['id'])) {
+			return $this->db->get('user')->row();
+		}
 	}
 
-	public function get_by_username($us){
-		return $this->db->get_where('user', array('user_name' => $us))->row();
+	public function save($param = array()){
+		
+		if (isset($param['password'])) {
+			$this->db->set('user_password', sha1($param['password']));
+		}
+
+		if (isset($param['username'])) {
+			$this->db->set('user_name', $param['username']);
+		}
+
+		if (isset($param['full_name'])) {
+			$this->db->set('user_full_name', $param['full_name']);
+		}
+
+		if (isset($param['description'])) {
+			$this->db->set('user_description', $param['description']);
+		}
+
+		if (isset($param['role'])) {
+			$this->db->set('user_role', $param['role']);
+		}
+
+		if (isset($param['id'])) {
+			$this->db->where('user_id', $param['id']);
+			$this->db->update('user');
+		}else{
+			$this->db->insert('user');
+		}
 	}
+
 }

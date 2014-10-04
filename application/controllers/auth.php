@@ -18,19 +18,21 @@ Class Auth extends CI_Controller{
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
 		if ($this->form_validation->run() == TRUE){
-			$user = $this->input->post('username');
-			$pass = $this->input->post('password');
-
-			if ($this->User_model->check_user($user, $pass) == TRUE) {
-				$us = $this->User_model->get_by_username($user);
+			$param['username'] = $this->input->post('username');
+			$param['password'] = $this->input->post('password');
+			if ($this->User_model->check_user($param) == TRUE) {
+				$us = $this->User_model->get(array('username'=> $param['username']));
 				$this->session->set_userdata('login', TRUE);
+				$this->session->set_userdata('id', $us->user_id);
 				$this->session->set_userdata('username', $us->user_name);
 				$this->session->set_userdata('fullname', $us->user_full_name);
 				$this->session->set_userdata('description', $us->user_description);
 				$this->session->set_userdata('role', $us->user_role);
 				redirect('pengelola');
+			}else{
+				$data['title'] = "Login";
+				$this->load->view('login/login', $data);				
 			}
-
 		}else{	
 			$data['title'] = "Login";
 			$this->load->view('login/login', $data);

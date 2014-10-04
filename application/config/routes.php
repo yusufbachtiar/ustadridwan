@@ -37,6 +37,7 @@
 | in the URL cannot be matched to a valid route.
 |
 */
+$route['pengelola/(:any)/edit/(:num)'] = "pengelola/$1/add/$2";
 $route['pengelola'] = 'pengelola/dashboard';
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
