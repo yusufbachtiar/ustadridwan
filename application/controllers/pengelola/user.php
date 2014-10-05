@@ -59,7 +59,7 @@ Class User extends CI_Controller{
 	public function cpw(){
 		$this->form_validation->set_rules('old_pass', 'Password lama', 'required|callback_check_current_password');
 		$this->form_validation->set_rules('new_pass', 'Password baru', 'required');
-		$this->form_validation->set_rules('new_pass_conf', 'Konfirmasi password', 'required');
+		$this->form_validation->set_rules('new_pass_conf', 'Konfirmasi password', 'required|matches[new_pass]');
 		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 		if ($this->form_validation->run() == TRUE) {
 			$param['password'] = $this->input->post('new_pass');

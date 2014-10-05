@@ -17,18 +17,18 @@
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Posting<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'posting') ? 'in' : null ; ?>">
                                 <li>
-                                    <a href="">Daftar Posting</a>
+                                    <a href="<?php echo site_url('pengelola/posting');?>">Daftar Posting</a>
                                 </li>
                                 <li>
-                                    <a href="">Tambah Posting</a>
+                                    <a href="<?php echo site_url('pengelola/posting/add');?>">Tambah Posting</a>
                                 </li>
                                 <li>
-                                    <a href="">Kategori Posting</a>
+                                    <a href="<?php echo site_url('pengelola/posting/category');?>">Kategori Posting</a>
                                 </li>
                                 <li>
-                                    <a href="">Tambah Kategori Posting</a>
+                                    <a href="<?php echo site_url('pengelola/posting/category/add');?>">Tambah Kategori Posting</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
