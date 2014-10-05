@@ -31,6 +31,10 @@ Class Posting_model extends CI_Model{
 
 	public function get_category($param = array()){
 
+		if (isset($param['id'])) {
+			$this->db->where('post_cat_id', $param['id']);
+		}
+
 		$res = $this->db->get('posting_category');
 
 		if (isset($param['id'])) {
@@ -78,5 +82,26 @@ Class Posting_model extends CI_Model{
 		}
 
 		$this->db->delete('posting');
+	}
+
+	public function save_category($param = array()){
+		if (isset($param['name'])) {
+			$this->db->set('post_cat_name', $param['name']);
+		}
+
+		if (isset($param['id'])) {
+			$this->db->where('post_cat_id', $param['id']);
+			$this->db->update('posting_category');
+		}else{
+			$this->db->insert('posting_category');
+		}
+	}
+
+	public function delete_category($param = array()){
+		if (isset($param['id'])) {
+			$this->db->where('post_cat_id', $param['id']);
+		}
+
+		$this->db->delete('posting_category');
 	}
 }

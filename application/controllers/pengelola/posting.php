@@ -61,4 +61,40 @@ Class Posting extends CI_Controller{
 		$this->session->set_flashdata('success', 'Hapus posting berhasil');
 		redirect('pengelola/posting');
 	}
+
+	public function category($id = null){
+		$data['category'] = $this->Posting_model->get_category();
+		$data['title'] = 'Kategori';
+		$data['header'] = 'Kategori';
+		$data['page'] = 'pengelola/posting/list_category';
+		$this->load->view('pengelola/template/layout', $data);
+	}
+
+	public function add_category($id = null){
+		$this->form_validation->set_rules('category', 'Kategori', 'required');
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+		if ($this->form_validation->run() == TRUE ) {
+			if ($this->input->post('id')) {
+				$param['id'] = $this->input->post('id');
+			}
+			$param['name'] = $this->input->post('category');
+			$this->Posting_model->save_category($param);
+			redirect('pengelola/posting/category');
+
+		}else{
+			if (isset($id)) {
+				$data['category'] = $this->Posting_model->get_category(array('id'=> $id));
+			}
+			$data['title'] = (isset($id)) ? 'Sunting' : 'Tambah';
+			$data['header'] = (isset($id)) ? 'Sunting' : 'Tambah';
+			$data['page'] = 'pengelola/posting/add_category';
+			$this->load->view('pengelola/template/layout', $data);
+		}
+	}
+
+	public function delete_category($id){
+		$this->Posting_model->delete_category(array('id'=>$id));
+		$this->session->set_flashdata('success', 'Hapus kategori berhasil');
+		redirect('pengelola/posting/category');
+	}
 }
