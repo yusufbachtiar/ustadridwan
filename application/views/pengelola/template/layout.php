@@ -10,6 +10,7 @@
 
     <!-- Core CSS - Include with every page -->
     <link href="<?php echo base_url();?>media/backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>media/backend/css/datepicker.css" rel="stylesheet">
     <link href="<?php echo base_url();?>media/backend/font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- Page-Level Plugin CSS - Blank -->
@@ -266,6 +267,7 @@
 
     <!-- Core Scripts - Include with every page -->
     <script src="<?php echo base_url()?>media/backend/js/jquery-1.10.2.js"></script>
+    <script src="<?php echo base_url()?>media/backend/js/datepicker.js"></script>
     <script src="<?php echo base_url()?>media/backend/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>media/backend/js/plugins/metisMenu/jquery.metisMenu.js"></script>
 

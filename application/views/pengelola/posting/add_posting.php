@@ -40,6 +40,7 @@ echo validation_errors();
 			<textarea name="content" class="mcEditor" rows="10"><?php echo $content?></textarea>
 		</div>
 	</div>
+
 </div>
 <div class="col-md-4">
 	<div class="row">

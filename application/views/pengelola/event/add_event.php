@@ -40,13 +40,13 @@ echo validation_errors();
 	<div class="row">
 		<div class="col-md-12">
 			<label>Tanggal Mulai</label><br>
-			<input type="text" name="start" value="<?php echo $start?>" class="form-control"><br>
+			<input type="text" name="start" id="start" value="<?php echo $start?>" class="form-control"><br>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<label>Tanggal Selesai</label><br>
-			<input type="text" name="end" value="<?php echo $end?>" class="form-control"><br>
+			<input type="text" name="end" id="end" value="<?php echo $end?>" class="form-control"><br>
 		</div>
 	</div>
 	<div class="row">
@@ -105,3 +105,23 @@ echo validation_errors();
 	</div>
 </div>
 <?php echo form_close()?>
+<script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+
+            	$('#start').datepicker({
+            		format: "yyyy-mm-dd",
+            		autoclose: true,
+            	});  
+
+            });
+            // When the document is ready
+            $(document).ready(function () {
+
+            	$('#end').datepicker({
+            		format: "yyyy-mm-dd",
+            		autoclose: true,
+            	});  
+
+            });
+            </script>
