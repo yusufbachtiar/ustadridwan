@@ -1,6 +1,6 @@
 <div class="navbar-default navbar-static-side" role="navigation">
-                <div class="sidebar-collapse">
-                    <ul class="nav" id="side-menu">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
                         <!--li class="sidebar-search">
                             <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -33,9 +33,27 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
                         <li>
-                            <a href=""><i class="fa fa-table fa-fw"></i> Acara</a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Event<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'event') ? 'in' : null ; ?>">
+                                <li>
+                                    <a href="<?php echo site_url('pengelola/event');?>">Daftar Event</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('pengelola/event/add');?>">Tambah Event</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('pengelola/event/category');?>">Kategori Event</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo site_url('pengelola/event/category/add');?>">Tambah Kategori Event</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
+
+
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>

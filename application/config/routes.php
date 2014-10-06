@@ -37,9 +37,9 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-$route['pengelola/posting/category/delete/(:num)'] = "pengelola/posting/delete_category/$1";
-$route['pengelola/posting/category/add'] = "pengelola/posting/add_category";
-$route['pengelola/posting/category/edit/(:num)'] = "pengelola/posting/add_category/$1";
+$route['pengelola/(:any)/category/delete/(:num)'] = "pengelola/$1/delete_category/$2";
+$route['pengelola/(:any)/category/add'] = "pengelola/$1/add_category";
+$route['pengelola/(:any)/category/edit/(:num)'] = "pengelola/$1/add_category/$2";
 $route['pengelola/(:any)/edit/(:num)'] = "pengelola/$1/add/$2";
 $route['pengelola'] = 'pengelola/dashboard';
 $route['default_controller'] = "welcome";
