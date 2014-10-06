@@ -60,9 +60,13 @@ if (isset($profile)) {
 	<label>Photo</label><br>
 	<input type="file" name="photo"><br>
 	<div class="row">
-		<div class="col-md-12">
-			<img class="img img-rounded" width="200px" src="<?php echo base_url()?>images/<?php echo $image ?>">
-		</div>
+		<?php if (isset($image)) {
+			?>
+			<div class="col-md-12">
+				<img class="img img-rounded" width="200px" src="<?php echo base_url()?>images/<?php echo $image ?>">
+			</div>
+			<?php
+		}?>
 	</div>
 </div>
 <?php echo form_close();?>
