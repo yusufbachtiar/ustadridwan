@@ -13,22 +13,22 @@
                             </input-group >
                         </li -->
                         <li>
-                            <a href="<?php echo site_url('pengelola')?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo base_url('pengelola')?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Posting<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'posting') ? 'in' : null ; ?>">
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/posting');?>">Daftar Posting</a>
+                                    <a href="<?php echo base_url('pengelola/posting');?>">Daftar Posting</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/posting/add');?>">Tambah Posting</a>
+                                    <a href="<?php echo base_url('pengelola/posting/add');?>">Tambah Posting</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/posting/category');?>">Kategori Posting</a>
+                                    <a href="<?php echo base_url('pengelola/posting/category');?>">Kategori Posting</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/posting/category/add');?>">Tambah Kategori Posting</a>
+                                    <a href="<?php echo base_url('pengelola/posting/category/add');?>">Tambah Kategori Posting</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -38,16 +38,16 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Event<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'event') ? 'in' : null ; ?>">
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/event');?>">Daftar Event</a>
+                                    <a href="<?php echo base_url('pengelola/event');?>">Daftar Event</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/event/add');?>">Tambah Event</a>
+                                    <a href="<?php echo base_url('pengelola/event/add');?>">Tambah Event</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/event/category');?>">Kategori Event</a>
+                                    <a href="<?php echo base_url('pengelola/event/category');?>">Kategori Event</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo site_url('pengelola/event/category/add');?>">Tambah Kategori Event</a>
+                                    <a href="<?php echo base_url('pengelola/event/category/add');?>">Tambah Kategori Event</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -55,7 +55,7 @@
 
 
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                            <a href="<?php echo base_url('pengelola/profile')?>"><i class="fa fa-edit fa-fw"></i> Profil Ustadz</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
