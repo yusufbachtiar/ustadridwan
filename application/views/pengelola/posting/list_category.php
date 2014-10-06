@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?></h1>
 <div class="col-md-12">
 	<table class="table table-hover">
 		<thead>

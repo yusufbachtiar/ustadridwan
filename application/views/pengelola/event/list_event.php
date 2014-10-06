@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?></h1>
 <ul class="nav nav-tabs" role="tablist">
 	<li class="active"><a href="#home" role="tab" data-toggle="tab">Semua</a></li>
 	<li><a href="#sekali" role="tab" data-toggle="tab">Sekali</a></li>

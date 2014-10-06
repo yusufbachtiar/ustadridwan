@@ -253,7 +253,6 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header"><?php echo $header;?></h1>
                     <?php (isset($page)) ? $this->load->view($page) : null ;?>
                 </div>
                 <!-- /.col-lg-12 -->

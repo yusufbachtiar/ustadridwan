@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?> Posting</h1>
 <?php
 $this->load->view('pengelola/template/tinymce_init');
 if (isset($posting)) {

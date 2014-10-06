@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?> Kategori Posting</h1>
 <?php
 if (isset($category)) {
 	$name = $category->post_cat_name;

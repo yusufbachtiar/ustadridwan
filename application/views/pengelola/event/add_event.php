@@ -25,6 +25,7 @@ if (isset($event)) {
 echo form_open(current_url());
 echo validation_errors();
 ?>
+<h1 class="page-header"><?php echo $header;?> Event</h1>
 <div class="col-md-8">
 	<div class="row">
 		<div class="col-md-12">

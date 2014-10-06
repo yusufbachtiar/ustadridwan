@@ -18,7 +18,7 @@ Class Posting extends CI_Controller{
 
 		$data['halaman'] = $this->pagination->create_links();
 		$data['title'] = 'Posting';
-		$data['header'] = 'Posting';
+		$data['header'] = 'Daftar Posting';
 		$data['page'] = 'pengelola/posting/list_posting';
 		$this->load->view('pengelola/template/layout', $data);
 	}
@@ -49,7 +49,7 @@ Class Posting extends CI_Controller{
 				$data['posting'] = $this->Posting_model->get(array('id'=>$id));
 			}
 			$data['category'] = $this->Posting_model->get_category();
-			$data['title'] = (isset($id)) ? 'Sunting' : 'Tambah';
+			$data['title'] = 'Tambah Posting';
 			$data['header'] = (isset($id)) ? 'Sunting' : 'Tambah';
 			$data['page'] = 'pengelola/posting/add_posting';
 			$this->load->view('pengelola/template/layout', $data);
@@ -65,7 +65,7 @@ Class Posting extends CI_Controller{
 	public function category($id = null){
 		$data['category'] = $this->Posting_model->get_category();
 		$data['title'] = 'Kategori';
-		$data['header'] = 'Kategori';
+		$data['header'] = 'Daftar Kategori Posting';
 		$data['page'] = 'pengelola/posting/list_category';
 		$this->load->view('pengelola/template/layout', $data);
 	}
@@ -85,7 +85,7 @@ Class Posting extends CI_Controller{
 			if (isset($id)) {
 				$data['category'] = $this->Posting_model->get_category(array('id'=> $id));
 			}
-			$data['title'] = (isset($id)) ? 'Sunting' : 'Tambah';
+			$data['title'] = 'Kategori Posting';
 			$data['header'] = (isset($id)) ? 'Sunting' : 'Tambah';
 			$data['page'] = 'pengelola/posting/add_category';
 			$this->load->view('pengelola/template/layout', $data);

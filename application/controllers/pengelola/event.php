@@ -22,7 +22,7 @@ Class Event extends CI_Controller{
 
 		$data['halaman'] = $this->pagination->create_links();
 		$data['title'] = 'Event';
-		$data['header'] = 'Event';
+		$data['header'] = 'Daftar Event';
 		$data['page'] = 'pengelola/event/list_event';
 		$this->load->view('pengelola/template/layout', $data);
 	}
@@ -56,7 +56,7 @@ Class Event extends CI_Controller{
 				$data['event'] = $this->Event_model->get(array('id'=> $id));
 			}
 			$data['title'] = 'Event';
-			$data['header'] = 'Event';
+			$data['header'] = (isset($id)) ? 'Sunting' : 'Tambah' ;
 			$data['kategori'] = $this->Event_model->get_category();
 			$data['page'] = 'pengelola/event/add_event';
 			$this->load->view('pengelola/template/layout', $data);
@@ -70,7 +70,7 @@ Class Event extends CI_Controller{
 
 	public function category($id = null){
 		$data['title'] = 'Event';
-		$data['header'] = 'Event';
+		$data['header'] = 'Daftar Kategori Event';
 		$data['kategori'] = $this->Event_model->get_category();
 		$data['page'] = 'pengelola/event/list_category';
 		$this->load->view('pengelola/template/layout', $data);
@@ -91,7 +91,7 @@ Class Event extends CI_Controller{
 			if (isset($id)) {
 				$data['category'] = $this->Event_model->get_category(array('id'=> $id));
 			}
-			$data['title'] = (isset($id)) ? 'Sunting' : 'Tambah';
+			$data['title'] = 'Kategori Event';
 			$data['header'] = (isset($id)) ? 'Sunting' : 'Tambah';
 			$data['page'] = 'pengelola/event/add_category';
 			$this->load->view('pengelola/template/layout', $data);
