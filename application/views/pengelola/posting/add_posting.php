@@ -50,9 +50,15 @@ echo validation_errors();
 			<label class="radio inline">
 				<input type="radio" name="publish" value="0" <?php echo ($publish == 0)? 'checked' : '';?>> Draft
 			</label>
-			<label class="radio inline">
-				<input type="radio" name="publish" value="1" <?php echo ($publish == 1)? 'checked' : '';?>> Terbit
-			</label>
+			<?php
+			if ($this->session->userdata('role') == 1) {
+				?>
+				<label class="radio inline">
+					<input type="radio" name="publish" value="1" <?php echo ($publish == 1)? 'checked' : '';?>> Terbit
+				</label>
+				<?php
+			}
+			?>
 		</div>
 	</div>
 	<hr>

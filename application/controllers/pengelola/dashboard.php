@@ -12,6 +12,7 @@ Class Dashboard extends CI_Controller{
 	public function index(){
 		$data['header'] = 'Dashboard';
 		$data['title'] = 'Dashboard';
+		$data['page'] = 'pengelola/dashboard';
 		$this->load->view('pengelola/template/layout', $data);
 	}
 }

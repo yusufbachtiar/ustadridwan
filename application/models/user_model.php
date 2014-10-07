@@ -28,6 +28,8 @@ Class User_model extends CI_Model{
 
 		if (isset($param['username']) OR isset($param['id'])) {
 			return $this->db->get('user')->row();
+		}else{
+			return $this->db->get('user')->result();
 		}
 	}
 

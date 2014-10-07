@@ -5,10 +5,20 @@ Class User extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('User_model');
+		if ($this->session->userdata('login') == FALSE) {
+			redirect('auth/login');
+		}
 	}
 
-	public function index(){
-
+	public function index($offset = null){
+		if ($this->session->userdata('role') != 1) {
+			redirect('pengelola/user/profil');
+		}
+		$data['user'] = $this->User_model->get();
+		$data['title'] = 'User';
+		$data['header'] = 'Daftar User';
+		$data['page'] = 'pengelola/user/list_user';
+		$this->load->view('pengelola/template/layout', $data);
 	}
 
 	public function profil(){
@@ -20,6 +30,11 @@ Class User extends CI_Controller{
 	}
 
 	public function add($id = null){
+		if (isset($id)) {
+			if ($id != $this->session->userdata('id') AND $this->session->userdata('role') != 1) {
+				redirect('pengelola/user/profil');
+			}
+		}
 		if (!$this->input->post('id')) {			
 			$this->form_validation->set_rules('username', 'Username', 'required|is_unique[user.user_name]');
 			$this->form_validation->set_rules('password', 'Password', 'required');
@@ -49,8 +64,8 @@ Class User extends CI_Controller{
 			if (isset($id)) {
 				$data['user'] = $this->User_model->get(array('id'=> $id));
 			}
-			$data['title'] = $data['operation'].' Pengguna';
-			$data['header'] = $data['operation'].' Pengguna';
+			$data['title'] = $data['operation'];
+			$data['header'] = $data['operation'];
 			$data['page'] = 'pengelola/user/add';
 			$this->load->view('pengelola/template/layout', $data);	
 		}
@@ -69,6 +84,27 @@ Class User extends CI_Controller{
 		}else{
 			$data['title'] = 'Ganti Password';
 			$data['header'] = 'Ganti Password';
+			$data['page'] = 'pengelola/user/cpw';
+			$this->load->view('pengelola/template/layout', $data);
+		}
+	}
+
+	public function rpw($id = null){
+		if ($this->session->userdata('id') != 1) {
+			redirect('pengelola/dashboard');
+		}
+		$this->form_validation->set_rules('new_pass', 'Password baru', 'required');
+		$this->form_validation->set_rules('new_pass_conf', 'Konfirmasi password', 'required|matches[new_pass]');
+		$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+		if ($this->form_validation->run() == TRUE) {
+			$param['password'] = $this->input->post('new_pass');
+			$param['id'] = $this->input->post('id');
+			$this->User_model->save($param);
+			redirect('pengelola');
+		}else{
+			$data['id'] = $id;
+			$data['title'] = 'Reset Password';
+			$data['header'] = 'Reset Password';
 			$data['page'] = 'pengelola/user/cpw';
 			$this->load->view('pengelola/template/layout', $data);
 		}

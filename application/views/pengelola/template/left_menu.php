@@ -53,12 +53,16 @@
                             <!-- /.nav-second-level -->
                         </li>
 
-
                         <li>
-                            <a href="<?php echo base_url('pengelola/profile')?>"><i class="fa fa-edit fa-fw"></i> Profil Ustadz</a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Profil Ustadz<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'profile') ? 'in' : null ; ?>">
+                                <li>
+                                    <a href="<?php echo base_url('pengelola/profile')?>"> Profil Ustadz</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Gallery<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="panels-wells.html">Panels and Wells</a>
@@ -78,6 +82,22 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <?php if ($this->session->userdata('role') == 1) {
+                            ?>
+                            <li>
+                                <a href="#"><i class="fa fa-files-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'user') ? 'in' : null ; ?>">
+                                    <li>
+                                        <a href="<?php echo base_url('pengelola/user')?>">Daftar User</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('pengelola/user/add')?>">Tambah User</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+                            <?php
+                        }?>
                         <li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -108,18 +128,7 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        
                     </ul>
                     <!-- /#side-menu -->
                 </div>

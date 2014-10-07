@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?> User</h1>
 <?php $this->load->view('pengelola/template/tinymce_init'); ?>
 <?php
 if (isset($user)) {
@@ -72,6 +73,25 @@ echo validation_errors();
 <div class="col-md-4">
 	<label>Aksi</label><br>
 	<input type="submit" value="Simpan" class="btn btn-primary">
+	<?php if (isset($user)) {
+		?>
+		<a href="<?php echo base_url('pengelola/user')?>" class="btn btn-success">Batal</a>
+		<?php if ($this->session->userdata('id') == $user->user_id) {
+			?>
+			<a href="<?php echo base_url('pengelola/user/cpw')?>" class="btn btn-warning">Ubah Password</a>
+			<?php
+		}else{
+			?>
+			<a href="<?php echo base_url('pengelola/user/rpw/'.$user->user_id)?>" class="btn btn-warning">Reset Password</a>
+			<?php
+		}?>
+		<?php
+		if ($user->user_id != $this->session->userdata('id')) {
+			?>
+			<a href="<?php echo base_url('pengelola/user/delete/'.$user->user_id)?>" onclick="return confirm('Are you sure to delete this item?')" class="btn btn-danger">Hapus</a>
+			<?php
+		}
+	}?>
 </div>
 
 <?php echo form_close()?>

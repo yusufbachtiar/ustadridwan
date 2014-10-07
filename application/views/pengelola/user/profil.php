@@ -1,3 +1,4 @@
+<h1 class="page-header"><?php echo $header;?></h1>
 <div class="col-md-4">
 	<label>Username</label><br>
 	<label>Nama Lengkap</label><br>

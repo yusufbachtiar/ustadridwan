@@ -1,13 +1,22 @@
+<h1 class="page-header"><?php echo $header;?> User</h1>
 <?php echo form_open(current_url());
 echo validation_errors();
 ?>
 <div class="col-md-8">
-	<div class="row">
-		<div class="col-md-12">
-			<label>Password Lama</label><br>
-			<input type="password" name="old_pass" class="form-control"><br>
+	<?php if ($this->uri->segment(3) == 'cpw') {
+		?>
+		<div class="row">
+			<div class="col-md-12">
+				<label>Password Lama</label><br>
+				<input type="password" name="old_pass" class="form-control"><br>
+			</div>
 		</div>
-	</div>
+		<?php
+	}else{
+		?>
+		<input type="hidden" name="id" value="<?php echo $id?>">
+		<?php
+	}?>
 	<div class="row">
 		<div class="col-md-12">
 			<label>Password Baru</label><br>
