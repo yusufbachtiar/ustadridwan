@@ -42,7 +42,7 @@ $route['pengelola/(:any)/category/add'] = "pengelola/$1/add_category";
 $route['pengelola/(:any)/category/edit/(:num)'] = "pengelola/$1/add_category/$2";
 $route['pengelola/(:any)/edit/(:num)'] = "pengelola/$1/add/$2";
 $route['pengelola'] = 'pengelola/dashboard';
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "base";
 $route['404_override'] = '';
 
 
