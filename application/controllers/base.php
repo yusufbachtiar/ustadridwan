@@ -29,7 +29,7 @@ class Base extends CI_Controller {
      */
     public function index() {
         $data['main'] = 'main';
-        $this->load->view('layout');
+        $this->load->view('layout', $data);
     }
 
 }
