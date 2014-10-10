@@ -34,6 +34,7 @@ Class Profile_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('profile_id', $param['id']);
 			$this->db->update('profile');
+			return $param['id'];
 		}
 	}
 }

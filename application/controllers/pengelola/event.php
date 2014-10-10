@@ -14,9 +14,9 @@ Class Event extends CI_Controller{
 		$data['semua'] = $this->Event_model->get(array('limit'=> 10, 'offset'=>$offset));
 		$data['sekali'] = $this->Event_model->get(array('category'=>1, 'limit'=> 10, 'offset'=>$offset));
 		$data['pekanan'] = $this->Event_model->get(array('category'=>2, 'limit'=> 10, 'offset'=>$offset));
-		$data['tahunan'] = $this->Event_model->get(array('category'=>3, 'limit'=> 10, 'offset'=>$offset));
-		$data['rutin'] = $this->Event_model->get(array('category'=>4, 'limit'=> 10, 'offset'=>$offset));
-		$config['base_url'] = site_url('pengelola/event/index/');
+		$data['bulanan'] = $this->Event_model->get(array('category'=>3, 'limit'=> 10, 'offset'=>$offset));
+		$config['base_url'] = site_url('pengelola/event/index');
+		$config['uri_segment'] = 4;
 		$config['total_rows'] = count($this->Event_model->get())+1;
 		$this->pagination->initialize($config);
 
@@ -48,7 +48,16 @@ Class Event extends CI_Controller{
 				$param['id'] = $this->input->post('id');
 			}
 
-			$this->Event_model->save($param);
+			$return = $this->Event_model->save($param);
+
+			$operation = (isset($id)) ? 'Edit' : 'Tambah' ;
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : '. $operation.' event; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
+
 			redirect('pengelola/event');
 
 		}else{
@@ -64,7 +73,13 @@ Class Event extends CI_Controller{
 	}
 
 	public function delete($id = null){
-		$this->Event_model->delete(array('id'=>$id));
+		$return = $this->Event_model->delete(array('id'=>$id));
+		$data = array(
+			'user'=>$this->session->userdata('id'),
+			'what'=> 'Aksi : Hapus event; '.'ID : '.$return,
+			'date'=> date('Y-m-d')
+			);
+		$this->Activity_model->save($data);
 		redirect('pengelola/event');
 	}
 
@@ -84,7 +99,14 @@ Class Event extends CI_Controller{
 				$param['id'] = $this->input->post('id');
 			}
 			$param['name'] = $this->input->post('category');
-			$this->Event_model->save_category($param);
+			$return = $this->Event_model->save_category($param);
+			$operation = (isset($id)) ? 'Edit' : 'Tambah' ;
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : '. $operation.' kategori event; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
 			redirect('pengelola/event/category');
 
 		}else{
@@ -99,7 +121,13 @@ Class Event extends CI_Controller{
 	}
 
 	public function delete_category($id){
-		$this->Event_model->delete_category(array('id'=> $id));
+		$return = $this->Event_model->delete_category(array('id'=> $id));
+		$data = array(
+			'user'=>$this->session->userdata('id'),
+			'what'=> 'Aksi : Hapus kategori event; '.'ID : '.$return,
+			'date'=> date('Y-m-d')
+			);
+		$this->Activity_model->save($data);
 		redirect('pengelola/event/category');
 	}
 }

@@ -36,7 +36,16 @@ Class Profile extends CI_Controller{
 				$param['photo'] = $files['file_name'];
 			}
 
-			$this->Profile_model->save($param);
+			$return = $this->Profile_model->save($param);
+
+			$operation = ($this->input->post('id')) ? 'Edit' : 'Tambah' ;
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : '. $operation.' profil; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
+
 			redirect('pengelola/profile');
 		}else{
 			$data['profile'] = $this->Profile_model->get(array('id'=>1));

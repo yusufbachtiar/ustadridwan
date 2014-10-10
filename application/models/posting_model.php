@@ -8,6 +8,10 @@ Class Posting_model extends CI_Model{
 			$this->db->where('posting_id', $param['id']);
 		}
 
+		if (isset($param['publish'])) {
+			$this->db->where('posting_is_publish', $param['publish']);
+		}
+
 		if(isset($param['limit']))
 		{
 			if(!isset($param['offset']))
@@ -17,7 +21,7 @@ Class Posting_model extends CI_Model{
 
 			$this->db->limit($param['limit'], $param['offset']);
 		}
-
+		$this->db->order_by('posting_id', 'DESC');
 		$this->db->join('user', 'user.user_id = posting.author_user_id');
 		$this->db->join('posting_category', 'posting_category.post_cat_id = posting.posting_category');
 		$res = $this->db->get('posting');
@@ -30,6 +34,16 @@ Class Posting_model extends CI_Model{
 	}
 
 	public function get_category($param = array()){
+
+		if(isset($param['limit']))
+		{
+			if(!isset($param['offset']))
+			{
+				$param['offset'] = NULL;
+			}
+
+			$this->db->limit($param['limit'], $param['offset']);
+		}
 
 		if (isset($param['id'])) {
 			$this->db->where('post_cat_id', $param['id']);
@@ -70,9 +84,13 @@ Class Posting_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('posting_id', $param['id']);
 			$this->db->update('posting');
+			$return = $param['id'];
 		}else{
 			$this->db->insert('posting');
+			$return = $this->db->insert_id();
 		}
+
+		return $return;
 
 	}
 
@@ -82,6 +100,7 @@ Class Posting_model extends CI_Model{
 		}
 
 		$this->db->delete('posting');
+		return $param['id'];
 	}
 
 	public function save_category($param = array()){
@@ -92,9 +111,13 @@ Class Posting_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('post_cat_id', $param['id']);
 			$this->db->update('posting_category');
+			$return = $param['id'];
 		}else{
 			$this->db->insert('posting_category');
+			$return = $this->db->insert_id();
 		}
+
+		return $return;
 	}
 
 	public function delete_category($param = array()){
@@ -103,5 +126,6 @@ Class Posting_model extends CI_Model{
 		}
 
 		$this->db->delete('posting_category');
+		return $return = $param['id'];
 	}
 }

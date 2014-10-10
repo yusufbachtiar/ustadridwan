@@ -21,7 +21,7 @@
 			}?>
 		</tbody>
 	</table>
-	<div class="pagination">
-		<?php echo $halaman;?>
-	</div>
+<?php
+echo $this->pagination->create_links();
+?>
 </div>

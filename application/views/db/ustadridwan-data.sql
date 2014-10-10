@@ -35,3 +35,34 @@ INSERT INTO  `profile` (
 VALUES 
 ('1',  'Ahmad Ridwan', NULL , NULL , NULL , NULL , NULL , NULL
 );
+
+
+--
+-- Dumping data for table `posting_category`
+--
+
+INSERT INTO `posting_category` (`post_cat_id`, `post_cat_name`) VALUES
+(1, 'Alqur''an'),
+(2, 'Hadits'),
+(3, 'Aqidah'),
+(4, 'Akhlaq'),
+(5, 'Fiqh'),
+(6, 'Tazkiyyatun Nufus'),
+(7, 'Cahaya Islam'),
+(8, 'Sejarah Orang Besar'),
+(9, 'Muslimah'),
+(10, 'Keluarga Islami'),
+(11, 'Tsaqofah'),
+(12, 'Informasi Umum');
+
+
+
+--
+-- Dumping data for table `event_category`
+--
+
+INSERT INTO `event_category` (`event_category_id`, `event_category_name`) VALUES
+(1, 'Sekali'),
+(2, 'Harian'),
+(3, 'Pekanan'),
+(4, 'Bulanan');

@@ -2,13 +2,17 @@
 <div class="col-md-12">
 	<table class="table table-hover">
 		<thead>
-			<th>Kategori</th>
+			<th>Tanggal</th>
+			<th>Pengguna</th>
+			<th>Aktivitas</th>
 		</thead>
 		<tbody>
-			<?php foreach ($category as $key) {
+			<?php foreach ($activity as $key) {
 				?>
 				<tr>
-					<td><a href="<?php echo site_url('pengelola/posting/category/edit/'.$key->post_cat_id)?>"><?php echo $key->post_cat_name?></a> </td>
+					<td><?php echo pretty_date($key->activity_date);?></td>
+					<td><?php echo $key->user_name?></td>
+					<td><?php echo $key->activity_what?></td>
 				</tr>
 				<?php
 			}?>

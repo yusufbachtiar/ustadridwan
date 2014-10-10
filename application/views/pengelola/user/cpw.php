@@ -33,5 +33,6 @@ echo validation_errors();
 <div class="col-md-4">
 	<label>Aksi</label><br>
 	<input type="submit" value="Save" class="btn btn-primary">
+	<a href="<?php echo base_url('pengelola/user');?>" class="btn btn-success">Batal</a>
 </div>
 <?php echo form_close()?>

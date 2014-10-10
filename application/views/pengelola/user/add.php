@@ -20,7 +20,7 @@ echo validation_errors();
 ?>
 <div class="col-md-8">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-<?php echo (isset($user)) ? '12' : '6' ;?>">
 			<label>Username</label><br>
 			<?php if (isset($user)) {
 				?>
@@ -28,41 +28,32 @@ echo validation_errors();
 				<?php
 			}?>
 			<input type="text" name="username" value="<?php echo $username?>" class="form-control" <?php echo $readonly?>><br>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
 			<label>Nama Lengkap</label><br>
 			<input type="text" name="full_name" value="<?php echo $fullname?>" class="form-control"><br>
+			<?php if (!isset($user)) {
+				?>
+			</div>
+			<div class="col-md-6">
+				<label>Password</label><br>
+				<input type="password" name="password" class="form-control"><br>
+				<label>Ulangi Password</label><br>
+				<input type="password" name="passconf" class="form-control"><br>
+				<?php
+			}?>
 		</div>
 	</div>
 	<?php if (!isset($user)) {
 		?>
 		<div class="row">
 			<div class="col-md-12">
-				<label>Password</label><br>
-				<input type="password" name="password" class="form-control"><br>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<label>Ulangi Password</label><br>
-				<input type="password" name="passconf" class="form-control"><br>
 			</div>
 		</div>
 		<?php
 	}?>
-	<?php if($this->session->userdata('role') == 1){ ?>
-	<div class="row">
-		<div class="col-md-12">
-			<label>Role</label><br>
-			<select name="role" class="form-control">
-				<option value="1">Admin</option>
-				<option value="2" <?php echo (isset($user) AND $user->user_role == 2) ? 'selected' : null ;?>>Pengguna</option>
-			</select><br>
-		</div>
-	</div>
-	<?php } ?>
 	<div class="row">
 		<div class="col-md-12">
 			<label>Deskripsi</label><br>
@@ -71,6 +62,18 @@ echo validation_errors();
 	</div>
 </div>
 <div class="col-md-4">
+	<?php if($this->session->userdata('role') == 1){ ?>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Role</label><br>
+			<select name="role" class="form-control">
+				<option value="1">Admin</option>
+				<option value="2" <?php echo (isset($user) AND $user->user_role == 2) ? 'selected' : null ;?>>Kontributor</option>
+			</select><br>
+		</div>
+	</div>
+	<hr>
+	<?php } ?>
 	<label>Aksi</label><br>
 	<input type="submit" value="Simpan" class="btn btn-primary">
 	<?php if (isset($user)) {

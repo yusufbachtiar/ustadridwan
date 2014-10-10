@@ -57,7 +57,16 @@ Class User extends CI_Controller{
 			$param['username'] = $this->input->post('username');
 			$param['full_name'] = $this->input->post('full_name');
 			$param['description'] = $this->input->post('description');
-			$this->User_model->save($param);
+			$return = $this->User_model->save($param);
+
+			$operation = (isset($id)) ? 'Edit' : 'Tambah' ;
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : '. $operation.' user; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
+			
 			redirect('pengelola/dashboard');
 		}else{	
 			$data['operation'] = (!empty($id)) ? 'Sunting' : 'Tambah' ;
@@ -79,7 +88,15 @@ Class User extends CI_Controller{
 		if ($this->form_validation->run() == TRUE) {
 			$param['password'] = $this->input->post('new_pass');
 			$param['id'] = $this->session->userdata('id');
-			$this->User_model->save($param);
+			$return = $this->User_model->save($param);
+
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : Ubah password; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
+			
 			redirect('pengelola');
 		}else{
 			$data['title'] = 'Ganti Password';
@@ -99,8 +116,16 @@ Class User extends CI_Controller{
 		if ($this->form_validation->run() == TRUE) {
 			$param['password'] = $this->input->post('new_pass');
 			$param['id'] = $this->input->post('id');
-			$this->User_model->save($param);
-			redirect('pengelola');
+			$return = $this->User_model->save($param);
+
+			$data = array(
+				'user'=>$this->session->userdata('id'),
+				'what'=> 'Aksi : Reset password; '.'ID : '.$return,
+				'date'=> date('Y-m-d')
+				);
+			$this->Activity_model->save($data);
+
+			redirect('pengelola/user');
 		}else{
 			$data['id'] = $id;
 			$data['title'] = 'Reset Password';
@@ -120,5 +145,20 @@ Class User extends CI_Controller{
 			$this->form_validation->set_message('check_current_password', 'The Password did not same with the current password');
 			return FALSE;
 		}
+	}
+
+	public function delete($id = null){
+		if (isset($id)) {
+			$return = $this->User_model->delete(array('id'=>$id));
+		}
+
+		$data = array(
+			'user'=>$this->session->userdata('id'),
+			'what'=> 'Aksi : Hapus user; '.'ID : '.$return,
+			'date'=> date('Y-m-d')
+			);
+		$this->Activity_model->save($data);
+
+		redirect('pengelola/user');
 	}
 }

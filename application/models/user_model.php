@@ -22,6 +22,10 @@ Class User_model extends CI_Model{
 			$this->db->where('user_name', $param['username']);
 		}
 
+		if (isset($param['role'])) {
+			$this->db->where('user_role', $param['role']);
+		}
+
 		if (isset($param['password'])) {
 			$this->db->where('user_password', $param['password']);
 		}
@@ -55,12 +59,29 @@ Class User_model extends CI_Model{
 			$this->db->set('user_role', $param['role']);
 		}
 
+		if (isset($param['freeze'])) {
+			$this->db->set('user_freeze', $param['freeze']);
+		}
+
 		if (isset($param['id'])) {
 			$this->db->where('user_id', $param['id']);
 			$this->db->update('user');
+			$return = $param['id'];
 		}else{
 			$this->db->insert('user');
+			$return = $this->db->insert_id();
 		}
+
+		return $return;
+	}
+
+	public function delete($param = array()){
+		if (isset($param['id'])) {
+			$this->db->where('user_id', $param['id']);
+		}
+
+		$this->db->delete('user');
+		return $param['id'];
 	}
 
 }

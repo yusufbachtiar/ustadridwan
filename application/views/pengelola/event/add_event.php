@@ -39,13 +39,11 @@ echo validation_errors();
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<label>Tanggal Mulai</label><br>
 			<input type="text" name="start" id="start" value="<?php echo $start?>" class="form-control"><br>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<label>Tanggal Selesai</label><br>
 			<input type="text" name="end" id="end" value="<?php echo $end?>" class="form-control"><br>
 		</div>

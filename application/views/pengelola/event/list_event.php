@@ -83,7 +83,7 @@
 				<th>Lokasi</th>
 			</thead>
 			<tbody>
-				<?php foreach ($rutin as $key) {
+				<?php foreach ($bulanan as $key) {
 					?>
 					<tr>
 						<td><a href="<?php echo site_url('pengelola/event/edit/'.$key->event_id)?>"><?php echo $key->event_title?></a></td>
@@ -96,4 +96,7 @@
 			</tbody>
 		</table>
 	</div>
+	<?php
+	echo $this->pagination->create_links();
+	?>
 </div>

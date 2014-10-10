@@ -12,6 +12,10 @@ Class Event_model extends CI_Model{
 			$this->db->where('event_id', $param['id']);
 		}
 
+		if (isset($param['publish'])) {
+			$this->db->where('event_is_publish', $param['publish']);
+		}
+
 		if(isset($param['limit']))
 		{
 			if(!isset($param['offset']))
@@ -21,6 +25,7 @@ Class Event_model extends CI_Model{
 
 			$this->db->limit($param['limit'], $param['offset']);
 		}
+		$this->db->order_by('event_id', 'DESC');
 		$this->db->join('event_category', 'event_category.event_category_id = event.event_category_id');
 		$res = $this->db->get('event');
 
@@ -70,9 +75,13 @@ Class Event_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('event_id', $param['id']);
 			$this->db->update('event');
+			$return = $param['id'];
 		}else{
 			$this->db->insert('event');
+			$return = $this->db->insert_id();
 		}
+
+		return $return;
 
 	}
 
@@ -80,8 +89,8 @@ Class Event_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('event_id', $param['id']);
 		}
-
 		$this->db->delete('event');
+		return $param['id'];
 	}
 
 	public function delete_category($param = array()){
@@ -90,6 +99,7 @@ Class Event_model extends CI_Model{
 		}
 
 		$this->db->delete('event_category');
+		return $param['id'];
 	}
 
 	public function save_category($param = array()){
@@ -100,9 +110,13 @@ Class Event_model extends CI_Model{
 		if (isset($param['id'])) {
 			$this->db->where('event_category_id', $param['id']);
 			$this->db->update('event_category');
+			$return = $param['id'];
 		}else{
 			$this->db->insert('event_category');
+			$return = $this->db->insert_id();
 		}
+
+		return $return;
 	}
 
 }

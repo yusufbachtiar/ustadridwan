@@ -1,51 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
   <meta charset="utf-8">
-  <title>Ahmad Ridwan | <?php echo $title?></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="<?php echo base_url()?>media/login/css/bootstrap.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
-      <link href="<?php echo base_url()?>media/login/css/styles.css" rel="stylesheet">
-    </head>
-    <body>
-      <!--login modal-->
-      <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="text-center">Login</h1>
-            </div>
-            <div class="modal-body">
-              <?php 
-              echo validation_errors();
-              $attr = array('class'=>'form col-md-12 center-block');
-              echo form_open(current_url(), $attr);
-              ?>
-              <div class="form-group">
-                <input type="text" class="form-control input-lg" name="username" placeholder="Username">
-              </div>
-              <div class="form-group">
-                <input type="password" class="form-control input-lg" name="password" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Sign In">
-              </div>
-              <?php echo form_close()?>
-            </div>
-            <div class="modal-footer">
-              <div class="col-md-12">
-              </div>	
-            </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ahmad Ridwan | Login Admin</title>
+
+  <!-- Core CSS - Include with every page -->
+  <link href="<?php echo base_url()?>media/backend/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?php echo base_url()?>media/backend/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+  <!-- SB Admin CSS - Include with every page -->
+  <link href="<?php echo base_url()?>media/backend/css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Silakan Login</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form" action="<?php echo current_url()?>" method="POST">
+              <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                </div>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                </div>
+                <!-- Change this to a button or input when using this as a form -->
+                <input type="submit" value="Login" class="btn btn-lg btn-success btn-block">
+              </fieldset>
+            </form>
           </div>
         </div>
       </div>
-      <!-- script references -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-      <script src="<?php echo base_url()?>media/login/js/bootstrap.min.js"></script>
-      <script src="<?php echo base_url()?>media/login/js/scripts.js"></script>
-    </body>
-    </html>
+    </div>
+  </div>
+
+  <!-- Core Scripts - Include with every page -->
+  <script src="<?php echo base_url()?>media/backend/js/jquery-1.10.2.js"></script>
+  <script src="<?php echo base_url()?>media/backend/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url()?>media/backend/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+  <!-- SB Admin Scripts - Include with every page -->
+  <script src="<?php echo base_url()?>media/backend/js/sb-admin.js"></script>
+
+</body>
+
+</html>

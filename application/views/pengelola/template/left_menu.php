@@ -61,23 +61,25 @@
                                 </li>
                             </ul>
                         </li>
+                        <?php if($this->session->userdata('role') == 1){?>
+                        <li>
+                            <a href="#"><i class="fa fa-envelope fa-fw"></i> Surat Pembaca<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'question') ? 'in' : null ; ?>">
+                                <li>
+                                    <a href="<?php echo base_url('pengelola/question')?>">Daftar Surat Pembaca</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <?php } ?>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Gallery<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'gallery') ? 'in' : null ; ?>">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
+                                    <a href="<?php echo base_url('pengelola/gallery')?>">Daftar Gallery</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
+                                    <a href="<?php echo base_url('pengelola/gallery/add')?>">Tambah Gallery</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -96,9 +98,19 @@
                                 </ul>
                                 <!-- /.nav-second-level -->
                             </li>
+                            
+                            <li>
+                                <a href="#"><i class="fa fa-files-o fa-fw"></i> Log Aktivitas<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level <?php echo ($this->uri->segment(2) == 'activity') ? 'in' : null ; ?>">
+                                    <li>
+                                        <a href="<?php echo base_url('pengelola/activity')?>">Log Aktivitas</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
                             <?php
                         }?>
-                        <li>
+                        <!--li>
                             <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -123,11 +135,9 @@
                                             <a href="#">Third Level Item</a>
                                         </li>
                                     </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+                                                              </li>
                             </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                        </li-->
                         
                     </ul>
                     <!-- /#side-menu -->
