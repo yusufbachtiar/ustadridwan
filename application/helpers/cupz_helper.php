@@ -8,6 +8,27 @@ if ( ! function_exists('nav_in'))
 	}
 }
 
+if (! function_exists('posting_url')) {
+    function posting_url($param = array()){
+        if (isset($param->posting_url)) {
+            return $param->posting_url;
+        }else{
+            list($year, $month, $day) = explode('-', $param->posting_date);
+            return base_url('artikel/read/'.$year.'/'.$month.'/'.$day.'/'.$param->posting_id.'/'.url_title($param->posting_title).'.html');
+        }
+    }
+}
+
+if (! function_exists('nav_active')) {
+    function nav_active($url = ''){
+        if ($url = '') {
+            return 'active';
+        }else{
+            return (current_url() == $url) ? 'active' : '';
+        }
+    }
+}
+
 if ( ! function_exists('pretty_date'))
 {
     function pretty_date($date = '', $format = '', $timezone = FALSE)

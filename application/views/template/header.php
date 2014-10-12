@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Home | E-Shopper</title>
+        <title>Ahmad Ridwan, Lc. | </title>
         <link href="<?php echo base_url('media/frontend/css/bootstrap.min.css') ?>" rel="stylesheet">
         <link href="<?php echo base_url('media/frontend/css/font-awesome.min.css') ?>" rel="stylesheet">
         <link href="<?php echo base_url('media/frontend/css/prettyPhoto.css') ?>" rel="stylesheet">

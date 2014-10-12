@@ -12,6 +12,23 @@ Class Event_model extends CI_Model{
 			$this->db->where('event_id', $param['id']);
 		}
 
+		if (isset($param['start'])) {
+			$this->db->where('event_date_start', $param['start']);
+		}
+
+		if (isset($param['now'])) {
+			$this->db->where('event_date_start >=', date('Y-m-d'));
+			$this->db->where('event_date_end <=', date('Y-m-d'));
+		}
+
+		if (isset($param['coming'])) {
+			$this->db->where('event_date_end >', date('Y-m-d'));
+		}
+
+		if (isset($param['end'])) {
+			$this->db->where('event_date_end', $param['end']);
+		}
+
 		if (isset($param['publish'])) {
 			$this->db->where('event_is_publish', $param['publish']);
 		}
@@ -25,7 +42,8 @@ Class Event_model extends CI_Model{
 
 			$this->db->limit($param['limit'], $param['offset']);
 		}
-		$this->db->order_by('event_id', 'DESC');
+		$this->db->order_by('event_date_start', 'DESC');
+		$this->db->order_by('event_date_end	', 'DESC');
 		$this->db->join('event_category', 'event_category.event_category_id = event.event_category_id');
 		$res = $this->db->get('event');
 

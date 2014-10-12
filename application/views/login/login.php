@@ -33,7 +33,8 @@
                   <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
                 </div>
                 <div class="form-group">
-                  <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                  <input class="form-control" placeholder="Password" name="password" type="password">
+                  <input style="display: none;"  class="form-control" placeholder="fake" name="fake" type="text" value="">
                 </div>
                 <!-- Change this to a button or input when using this as a form -->
                 <input type="submit" value="Login" class="btn btn-lg btn-success btn-block">

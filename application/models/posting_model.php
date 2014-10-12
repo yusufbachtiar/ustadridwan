@@ -12,6 +12,10 @@ Class Posting_model extends CI_Model{
 			$this->db->where('posting_is_publish', $param['publish']);
 		}
 
+		if (isset($param['random'])) {
+			$this->db->order_by('posting_id', 'random');
+		}
+
 		if(isset($param['limit']))
 		{
 			if(!isset($param['offset']))
@@ -21,6 +25,11 @@ Class Posting_model extends CI_Model{
 
 			$this->db->limit($param['limit'], $param['offset']);
 		}
+
+		if (isset($param['post_cat_id'])) {
+			$this->db->where('post_cat_id', $param['post_cat_id']);
+		}
+
 		$this->db->order_by('posting_id', 'DESC');
 		$this->db->join('user', 'user.user_id = posting.author_user_id');
 		$this->db->join('posting_category', 'posting_category.post_cat_id = posting.posting_category');

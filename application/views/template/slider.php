@@ -1,4 +1,4 @@
-<section id="slider"><!--slider-->
+<section id="slider" class="hidden-sm hidden-xs"><!--slider-->
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -12,22 +12,22 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1><span>Ahmad </span>Ridwan, Lc.</h1>
+                                <h2>Anda bertanya, saya menjawab</h2>
+                                <p></p>
+                                <button type="button" class="btn btn-default get">Kirim Pertanyaan</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<?php echo base_url('media/images/home/girl1.jpg') ?>" class="girl img-responsive" alt="" />
-                                <img src="<?php echo base_url('media/images/home/pricing.png') ?>"  class="pricing" alt="" />
+                                <img src="<?php //echo base_url('media/images/home/pricing.png') ?>"  class="pricing" alt="" />
                             </div>
                         </div>
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1><span>Ahmad </span>Ridwan, Lc.</h1>
+                                <h2>Info Kajian dan Artikel Islami</h2>
+                                <p></p>
+                                <button type="button" class="btn btn-default get">Info Kajian</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<?php echo base_url('media/images/home/girl2.jpg') ?>" class="girl img-responsive" alt="" />
@@ -37,10 +37,10 @@
 
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1><span>Ahmad </span>Ridwan, Lc.</h1>
+                                <h2>Landasan Agama dan Hukum Fiqh Kontemporer</h2>
+                                <p></p>
+                                <button type="button" class="btn btn-default get">Artikel Terbaru</button>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<?php echo base_url('media/images/home/girl3.jpg'); ?>" class="girl img-responsive" alt="" />
