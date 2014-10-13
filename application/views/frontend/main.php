@@ -12,6 +12,7 @@
         </div>
         <div class="choose">
             <ul class="nav nav-pills nav-justified">
+                //ini sementara dihide
                 //<li><a href="#"><i class="fa fa-plus-square"></i>Facebook</a></li>
                 //<li><a href="#"><i class="fa fa-plus-square"></i>Twitter</a></li>
             </ul>
