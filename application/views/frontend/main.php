@@ -10,13 +10,15 @@
                 <a href="<?php echo posting_url($key)?>" class="btn btn-default add-to-cart">Selengkapnya</a>
             </div>
         </div>
+        
+        <!-- 
+        
         <div class="choose">
             <ul class="nav nav-pills nav-justified">
-                //ini sementara dihide
-                //<li><a href="#"><i class="fa fa-plus-square"></i>Facebook</a></li>
-                //<li><a href="#"><i class="fa fa-plus-square"></i>Twitter</a></li>
+                <li><a href="#"><i class="fa fa-plus-square"></i>Facebook</a></li>
+                <li><a href="#"><i class="fa fa-plus-square"></i>Twitter</a></li>
             </ul>
-        </div>
+        </div-->
     </div>
 </div>
 <?php } ?>
