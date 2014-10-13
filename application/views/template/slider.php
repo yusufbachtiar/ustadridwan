@@ -18,7 +18,7 @@
                                 <button type="button" class="btn btn-default get">Kirim Pertanyaan</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<?php echo base_url('http://fc09.deviantart.net/fs71/f/2010/217/e/6/Yusuf_Islam_in_WPAP_by_setobuje.png') ?>" class="girl img-responsive" alt="" />
+                                <img src="http://fc09.deviantart.net/fs71/f/2010/217/e/6/Yusuf_Islam_in_WPAP_by_setobuje.png" class="girl img-responsive" alt="" />
                                 <img src="<?php //echo base_url('media/images/home/pricing.png') ?>"  class="pricing" alt="" />
                             </div>
                         </div>
@@ -30,8 +30,8 @@
                                 <button type="button" class="btn btn-default get">Info Kajian</button>
                             </div>
                             <div class="col-sm-6">
-                                <img src="<?php echo base_url('http://2.bp.blogspot.com/_fuMnMLPGfRs/SljGu-tItxI/AAAAAAAAACM/Chx-mYbBlH4/s400/Hasan+Al+Banna+low.jpg') ?>" class="girl img-responsive" alt="" />
-                                <img src="<?php echo base_url('http://sansrise.files.wordpress.com/2013/12/wpap_kh__rahmat_abdullah_by_ovcxramdani.jpg') ?>"  class="pricing" alt="" />
+                                <img src="http://2.bp.blogspot.com/_fuMnMLPGfRs/SljGu-tItxI/AAAAAAAAACM/Chx-mYbBlH4/s400/Hasan+Al+Banna+low.jpg" class="girl img-responsive" alt="" />
+                                <img src="http://sansrise.files.wordpress.com/2013/12/wpap_kh__rahmat_abdullah_by_ovcxramdani.jpg"  class="pricing" alt="" />
                             </div>
                         </div>
 
