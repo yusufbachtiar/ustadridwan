@@ -3,7 +3,7 @@
 	<?php foreach ($detail as $key) {
 		?>
 		<div class="single-blog-post">
-			<h3><?php echo $key->posting_title?></h3>
+			<h3><a href="<?php echo posting_url($key)?>"><?php echo $key->posting_title?></a> </h3>
 			<div class="post-meta">
 				<ul>
 					<li><i class="fa fa-calendar"></i><?php echo pretty_date($key->posting_date)?></li>

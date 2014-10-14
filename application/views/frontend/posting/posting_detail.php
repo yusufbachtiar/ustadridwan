@@ -12,4 +12,5 @@
 		<?php echo $detail->posting_content?>
 	</div>
 </div><!--/blog-post-area-->
+<?php $this->load->view('template/disqus')?>
 
