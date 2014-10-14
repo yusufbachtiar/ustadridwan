@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Ahmad Ridwan, Lc. | </title>
-        <link href="<?php echo base_url('media/frontend/css/bootstrap.min.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/font-awesome.min.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/prettyPhoto.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/price-range.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/animate.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/main.css') ?>" rel="stylesheet">
-        <link href="<?php echo base_url('media/frontend/css/responsive.css') ?>" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ahmad Ridwan, Lc. | </title>
+    <link href="<?php echo base_url('media/frontend/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/font-awesome.min.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/prettyPhoto.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/price-range.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/animate.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/main.css') ?>" rel="stylesheet">
+    <link href="<?php echo base_url('media/frontend/css/responsive.css') ?>" rel="stylesheet">
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>
@@ -25,3 +25,12 @@
     </head><!--/head-->
 
     <body>
+
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
