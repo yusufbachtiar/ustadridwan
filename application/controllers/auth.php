@@ -31,6 +31,13 @@ Class Auth extends CI_Controller{
 					$this->session->set_userdata('fullname', $us->user_full_name);
 					$this->session->set_userdata('description', $us->user_description);
 					$this->session->set_userdata('role', $us->user_role);
+					$data = array(
+						'user'=>$this->session->userdata('id'),
+						'what'=> 'Aksi : '.$this->session->userdata('username').' Login ',
+						'date'=> date('Y-m-d')
+						);
+					$this->Activity_model->save($data);
+
 					redirect('pengelola');
 				}else{
 					$data['title'] = "Login";
