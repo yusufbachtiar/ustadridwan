@@ -58,8 +58,8 @@ Class User extends CI_Controller{
 			if ($this->input->post('active')) {
 				$param['active'] = $this->input->post('active');
 			}else{
-                            $param['active'] = 1;
-                        }
+				$param['active'] = 1;
+			}
 			$param['username'] = $this->input->post('username');
 			$param['full_name'] = $this->input->post('full_name');
 			$param['description'] = $this->input->post('description');
@@ -69,7 +69,7 @@ Class User extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' user; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 			
@@ -99,7 +99,7 @@ Class User extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : Ubah password; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 			
@@ -127,7 +127,7 @@ Class User extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : Reset password; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 
@@ -161,7 +161,7 @@ Class User extends CI_Controller{
 		$data = array(
 			'user'=>$this->session->userdata('id'),
 			'what'=> 'Aksi : Hapus user; '.'ID : '.$return,
-			'date'=> date('Y-m-d')
+			'date'=> date('Y-m-d H:i:s')
 			);
 		$this->Activity_model->save($data);
 

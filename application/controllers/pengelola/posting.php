@@ -49,7 +49,7 @@ Class Posting extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' posting; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 
@@ -73,7 +73,7 @@ Class Posting extends CI_Controller{
 		$data = array(
 			'user'=>$this->session->userdata('id'),
 			'what'=> 'Aksi : Hapus posting; '.'ID : '.$return,
-			'date'=> date('Y-m-d')
+			'date'=> date('Y-m-d H:i:s')
 			);
 		$this->Activity_model->save($data);
 
@@ -108,7 +108,7 @@ Class Posting extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' kategori posting; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 			redirect('pengelola/posting/category');
@@ -129,7 +129,7 @@ Class Posting extends CI_Controller{
 		$data = array(
 			'user'=>$this->session->userdata('id'),
 			'what'=> 'Aksi : Hapus kategori posting; '.'ID : '.$return,
-			'date'=> date('Y-m-d')
+			'date'=> date('Y-m-d H:i:s')
 			);
 		$this->Activity_model->save($data);
 		$this->session->set_flashdata('success', 'Hapus kategori berhasil');

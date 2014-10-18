@@ -54,7 +54,7 @@ Class Event extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' event; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 
@@ -77,7 +77,7 @@ Class Event extends CI_Controller{
 		$data = array(
 			'user'=>$this->session->userdata('id'),
 			'what'=> 'Aksi : Hapus event; '.'ID : '.$return,
-			'date'=> date('Y-m-d')
+			'date'=> date('Y-m-d H:i:s')
 			);
 		$this->Activity_model->save($data);
 		redirect('pengelola/event');
@@ -104,7 +104,7 @@ Class Event extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' kategori event; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 			redirect('pengelola/event/category');
@@ -125,7 +125,7 @@ Class Event extends CI_Controller{
 		$data = array(
 			'user'=>$this->session->userdata('id'),
 			'what'=> 'Aksi : Hapus kategori event; '.'ID : '.$return,
-			'date'=> date('Y-m-d')
+			'date'=> date('Y-m-d H:i:s')
 			);
 		$this->Activity_model->save($data);
 		redirect('pengelola/event/category');

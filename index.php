@@ -201,5 +201,17 @@ if (defined('ENVIRONMENT'))
  */
 require_once BASEPATH.'core/CodeIgniter.php';
 
+/*
+|---------------------------------------------------------------
+| TimeZone 
+|---------------------------------------------------------------
+|
+| default Time Zone
+| 
+
+*/
+if ( function_exists( 'date_default_timezone_set' ) )
+date_default_timezone_set('Asia/Jakarta');
+
 /* End of file index.php */
 /* Location: ./index.php */
