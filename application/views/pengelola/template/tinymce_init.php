@@ -1,6 +1,6 @@
 <script src="<?php echo base_url('media/tinymce/tinymce.min.js'); ?>"></script>
 <script>
-        tinymce.init({
+tinymce.init({
     menu : { // this is the complete default configuration
         file   : {title : 'File'  , items : 'newdocument'},
         edit   : {title : 'Edit'  , items : 'undo redo | cut copy paste pastetext | selectall'},
@@ -12,8 +12,10 @@
     }
 });
 tinymce.init({
-            selector:'textarea',
-            plugins: "table",
-    tools: "inserttable"
-        });
+    selector:'textarea',
+    plugins: "table",
+    tools: "inserttable",
+    plugins: "paste",
+    paste_as_text: true
+});
 </script>
