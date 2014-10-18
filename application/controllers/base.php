@@ -14,6 +14,7 @@ class Base extends CI_Controller {
 
     public function index() {
         $data['main'] = 'frontend/main';
+        $data['title'] = 'Home';
         $data['event'] = $this->Event_model->get(array('limit'=>10));
         $data['category'] = $this->Posting_model->get_category();
         $data['posting'] = $this->Posting_model->get(array('publish'=>1));
