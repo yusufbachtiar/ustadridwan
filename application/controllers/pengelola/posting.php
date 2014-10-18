@@ -45,6 +45,7 @@ Class Posting extends CI_Controller{
 			$return = $this->Posting_model->save($param);
 
 			$operation = (isset($id)) ? 'Edit' : 'Tambah' ;
+			
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' posting; '.'ID : '.$return,

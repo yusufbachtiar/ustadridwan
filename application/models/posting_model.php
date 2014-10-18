@@ -83,8 +83,10 @@ Class Posting_model extends CI_Model{
 		if (isset($param['publish'])) {
 			$this->db->set('posting_is_publish', $param['publish']);
 		}
-		if (isset($param['author'])) {
-			$this->db->set('author_user_id', $param['author']);
+		if (!isset($param['id'])) {	
+			if (isset($param['author'])) {
+				$this->db->set('author_user_id', $param['author']);
+			}
 		}
 		if (isset($param['image'])) {
 			$this->db->set('posting_image', $param['image']);

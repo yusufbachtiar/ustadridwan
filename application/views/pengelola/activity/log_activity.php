@@ -10,7 +10,7 @@
 			<?php foreach ($activity as $key) {
 				?>
 				<tr>
-					<td><?php echo pretty_date($key->activity_date);?></td>
+					<td><?php echo pretty_date_time($key->activity_date);?></td>
 					<td><?php echo $key->user_name?></td>
 					<td><?php echo $key->activity_what?></td>
 				</tr>

@@ -34,7 +34,7 @@ Class Auth extends CI_Controller{
 					$data = array(
 						'user'=>$this->session->userdata('id'),
 						'what'=> 'Aksi : '.$this->session->userdata('username').' Login ',
-						'date'=> date('Y-m-d')
+						'date'=> date('Y-m-d H:i:s')
 						);
 					$this->Activity_model->save($data);
 
