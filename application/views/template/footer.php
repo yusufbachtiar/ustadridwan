@@ -66,5 +66,17 @@ $profil = $CI->Profile_model->get(array('id'=>1));
     <script src="<?php echo base_url('media/frontend/js/price-range.js') ?>"></script>
     <script src="<?php echo base_url('media/frontend/js/jquery.prettyPhoto.js') ?>"></script>
     <script src="<?php echo base_url('media/frontend/js/main.js') ?>"></script>
+    <script src="<?php echo base_url('media/frontend/js/imgLiquid-min.js') ?>"></script>
+    <script src="<?php echo base_url('media/frontend/js/fancyapps/source/jquery.fancybox.pack.js') ?>"></script>
+<script>
+    $(".imgLiquidFill").imgLiquid({
+        fill: true,
+        horizontalAlign: "center",
+        verticalAlign: "center"
+    });
+    	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
 </body>
 </html>

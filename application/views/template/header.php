@@ -16,6 +16,7 @@
   <link href="<?php echo base_url('media/frontend/css/animate.css') ?>" rel="stylesheet">
   <link href="<?php echo base_url('media/frontend/css/main.css') ?>" rel="stylesheet">
   <link href="<?php echo base_url('media/frontend/css/responsive.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('media/frontend/js/fancyapps/source/jquery.fancybox.css'); ?>" rel="stylesheet" type="text/css">
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>

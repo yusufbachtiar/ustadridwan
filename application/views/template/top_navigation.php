@@ -32,7 +32,7 @@
                             </li> 
                             <li><a href="404.html">404</a></li>
                             <li><a href="<?php echo base_url('profile')?>">Tentang Saya</a></li>
-                            <li><a href="<?php echo site_url('surat/form') ?>">Mengajukan Pertanyaan</a></li>
+                            <li><a href="<?php echo site_url('surat') ?>">Mengajukan Pertanyaan</a></li>
                         </ul>
                     </div>
                 </div>
