@@ -40,7 +40,7 @@ Class Gallery_model extends CI_Model{
 			$this->db->set('gallery_title', $param['title']);
 		}
 		if (isset($param['image'])) {
-			$this->db->set('gallery_image', $param['image']);
+			$this->db->set('gallery_url', $param['image']);
 		}
 		if (isset($param['description'])) {
 			$this->db->set('gallery_description', $param['description']);

@@ -5,7 +5,7 @@ if (isset($gallery)) {
 	$id = $gallery->gallery_id;
 	$title = $gallery->gallery_title;
 	$description = $gallery->gallery_description;
-	$image = $gallery->gallery_image;
+	$image = $gallery->gallery_url;
 	$publish = $gallery->gallery_is_publish;
 	$type = $gallery->gallery_type;
 }else{

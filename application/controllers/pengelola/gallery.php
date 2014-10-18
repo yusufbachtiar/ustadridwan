@@ -47,7 +47,7 @@ Class Gallery extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : '. $operation.' galeri; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 
@@ -69,7 +69,7 @@ Class Gallery extends CI_Controller{
 			$data = array(
 				'user'=>$this->session->userdata('id'),
 				'what'=> 'Aksi : Hapus galery; '.'ID : '.$return,
-				'date'=> date('Y-m-d')
+				'date'=> date('Y-m-d H:i:s')
 				);
 			$this->Activity_model->save($data);
 			redirect('pengelola/gallery');
