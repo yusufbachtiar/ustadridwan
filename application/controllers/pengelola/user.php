@@ -40,6 +40,7 @@ Class User extends CI_Controller{
 			$this->form_validation->set_rules('password', 'Password', 'required');
 			$this->form_validation->set_rules('passconf', 'Password konfirmasi', 'required|matches[password]');
 			$this->form_validation->set_rules('role', 'Role pengguna', 'required');
+			$this->form_validation->set_rules('active', 'Status pengguna', 'required');
 		}
 		$this->form_validation->set_rules('description', 'Deskripsi pengguna', 'required');
 		$this->form_validation->set_rules('full_name', 'Nama lengkap', 'required');
@@ -54,6 +55,11 @@ Class User extends CI_Controller{
 			if ($this->input->post('role')) {
 				$param['role'] = $this->input->post('role');
 			}
+			if ($this->input->post('active')) {
+				$param['active'] = $this->input->post('active');
+			}else{
+                            $param['active'] = 1;
+                        }
 			$param['username'] = $this->input->post('username');
 			$param['full_name'] = $this->input->post('full_name');
 			$param['description'] = $this->input->post('description');

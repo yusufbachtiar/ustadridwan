@@ -12,7 +12,7 @@
 			<tr>
 				<td><a href="<?php echo base_url('pengelola/user/edit/'.$key->user_id);?>"><?php echo $key->user_name?></a></td>
 				<td><?php echo ($key->user_role == 1) ? 'Admin' : 'Kontributor';?></td>
-				<td><?php echo ($key->user_freeze == 0) ? 'Aktif' : 'Tidak aktif';?></td>
+				<td><?php echo ($key->user_active == 1) ? 'Aktif' : 'Tidak aktif';?></td>
 				<td><?php if ($this->session->userdata('id') == $key->user_id) {
 					?>
 					<a href="<?php echo base_url('pengelola/user/cpw/')?>" class="btn btn-warning">Ubah Password</a>

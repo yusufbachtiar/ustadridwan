@@ -59,8 +59,8 @@ Class User_model extends CI_Model{
 			$this->db->set('user_role', $param['role']);
 		}
 
-		if (isset($param['freeze'])) {
-			$this->db->set('user_freeze', $param['freeze']);
+		if (isset($param['active'])) {
+			$this->db->set('user_active', $param['active']);
 		}
 
 		if (isset($param['id'])) {
