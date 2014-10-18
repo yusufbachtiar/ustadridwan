@@ -2520,4 +2520,9 @@ h2.title {
   color: #FE980F;
 }
 
-
+.box-question{
+    margin:10px;
+    padding: 30px;
+    background-color: #C6F3F7;
+    border-radius: 7px;
+}
