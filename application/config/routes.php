@@ -38,7 +38,7 @@
 |
 */
 $route['posting/(:num)/(:any).html'] = "posting/category/$1";
-$route['(:any)/(:any)/(:num)/(:num)/(:num)/(:num)/(:any).html'] = "posting/detail/$6";
+$route['(:any)/(:num)/(:any).html'] = "posting/detail/$2";
 $route['pengelola/(:any)/category/delete/(:num)'] = "pengelola/$1/delete_category/$2";
 $route['pengelola/(:any)/category/add'] = "pengelola/$1/add_category";
 $route['pengelola/(:any)/category/edit/(:num)'] = "pengelola/$1/add_category/$2";

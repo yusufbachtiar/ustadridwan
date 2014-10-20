@@ -30,6 +30,10 @@ Class Posting_model extends CI_Model{
 			$this->db->where('post_cat_id', $param['post_cat_id']);
 		}
 
+		if (isset($param['search'])) {
+			$this->db->like('posting_title', $param['search']);
+		}
+
 		$this->db->order_by('posting_id', 'DESC');
 		$this->db->join('user', 'user.user_id = posting.author_user_id');
 		$this->db->join('posting_category', 'posting_category.post_cat_id = posting.posting_category');

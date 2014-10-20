@@ -14,8 +14,9 @@
 	<br>
 	<div class="row">
 		<div class="col-md-6">
-			<div class="fb-share-button" data-href="<?php echo posting_url($detail)?>" data-width="1000"></div>
-			<a href="https://twitter.com/share" class="twitter-share-button" data-via="">Tweet</a>
+			<label>Share</label> |
+			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo posting_url($detail)?>" target="_blank">Facebook</a> | 
+			<a href="https://twitter.com/share" class="" data-via="">Tweet</a> 
 			
 		</div>
 	</div>

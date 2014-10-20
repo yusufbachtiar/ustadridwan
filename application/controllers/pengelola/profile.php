@@ -26,7 +26,11 @@ Class Profile extends CI_Controller{
 				'study' => $this->input->post('study'),
 				'activity' => $this->input->post('activity'),
 				'organisation' => $this->input->post('organisation'),
-				'description' => $this->input->post('description')
+				'description' => $this->input->post('description'),
+				'phone' => $this->input->post('phone'),
+				'pin' => $this->input->post('pin'),
+				'fb' => $this->input->post('fb'),
+				'twitter' => $this->input->post('twitter')
 				);
 			
 			if ($_FILES['photo']['name'])

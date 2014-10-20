@@ -8,18 +8,23 @@ Class Posting extends CI_Controller{
 		$this->load->library('pagination');
 	}
 
-	public function index(){
-
-		$data['posting'] = $this->Posting_model->get(array('limit'=> 10, 'offset'=>$offset));
-		$config['base_url'] = site_url('pengelola/posting/index');
-		$config['uri_segment'] = 4;
-		$config['total_rows'] = count($this->Posting_model->get())+1;
+	public function index($offset = null){
+		$config['base_url'] = site_url('posting/index/');
+		$config['uri_segment'] = 3;
+		$config['total_rows'] = count($this->Posting_model->get(array('publish'=> 1)))+1;
 		$this->pagination->initialize($config);
 
-		$data['title'] = 'Posting';
-		$data['header'] = 'Daftar Posting';
-		$data['page'] = 'pengelola/posting/list_posting';
-		$this->load->view('pengelola/template/layout', $data);
+		$criteria = array('publish'=>1, 'limit'=>10, 'offset'=> $offset);
+		if ($this->input->post('search')) {
+			$criteria['search'] = $this->input->post('search');
+		}
+		$data['posting'] = $this->Posting_model->get($criteria);
+		$data['title'] = "Article";
+		$data['header'] = "Seluruh Artikel";
+		$data['main'] = "frontend/posting/all_posting";
+		$data['event'] = $this->Event_model->get(array('limit'=>10));
+		$data['category'] = $this->Posting_model->get_category();
+		$this->load->view('template/layout_detail', $data);
 	}
 
 	public function detail($id = null){

@@ -1,5 +1,5 @@
             
-<h2 class="title text-center">Posting</h2>
+<h2 class="title text-center">Artikel Terbaru</h2>
 <?php foreach ($posting12 as $key) { ?>
 <div class="col-sm-4">
     <div class="product-image-wrapper">

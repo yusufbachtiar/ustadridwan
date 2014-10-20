@@ -3,67 +3,98 @@
     <div class="single-blog-post">
         <div class="post-meta">
             <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-12">
-                        <table class="table-striped">
-                            <tbody>
-                                <tr>
-                                    <td>Nama Lengkap</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_full_name ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_address ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Riwayat Pendidikan</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_study ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Kegiatan</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_activity ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Deskripsi</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_description ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Organisasi</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_organisation ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Telepon</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_phone ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Pin</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_pin ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Twitter</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_twitter ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Facebook</td>
-                                    <td>:</td>
-                                    <td><?php echo $profile->profile_fb ?></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                <div class="row-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="<?php echo base_url()?>images/<?php echo $profile->profile_image?>" class="img-responsive img-rounded">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Nama Lengkap</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $profile->profile_full_name ?> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Alamat</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo strip_tags($profile->profile_address) ?> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Riwayat Pendidikan</label> 
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $profile->profile_study ?> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Kegiatan</label> 
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $profile->profile_activity ?> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Organisasi</label> 
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $profile->profile_organisation ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>Deskripsi</label> 
+                                </div>
+                                <div class="col-md-4">
+                                    <?php echo $profile->profile_description ?> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                 <label> Telepon / HP</label>
+                             </div>
+                             <div class="col-md-4">
+                                <?php echo $profile->profile_phone ?> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                             <label> Pin BB</label>
+                         </div>
+                         <div class="col-md-4">
+                            <?php echo $profile->profile_pin ?> 
+                        </div>
                     </div>
-                </div><br>
-
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Twitter</label> 
+                        </div>
+                        <div class="col-md-4">
+                           <a href="http://twitter.com/<?php echo $profile->profile_twitter?>" target="_blank"> <?php echo $profile->profile_twitter ?></a> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Facebook </label>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="http://facebook.com/<?php echo $profile->profile_fb?>" target="_blank"><?php echo $profile->profile_fb ?> </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+        </div><br>
+
     </div>
+</div>
+</div>
 </div>

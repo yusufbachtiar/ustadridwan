@@ -14,7 +14,7 @@ if (! function_exists('posting_url')) {
             return $param->posting_url;
         }else{
             list($year, $month, $day) = explode('-', $param->posting_date);
-            return base_url('artikel/read/'.$year.'/'.$month.'/'.$day.'/'.$param->posting_id.'/'.url_title($param->posting_title).'.html');
+            return base_url('artikel/'.$param->posting_id.'/'.url_title($param->posting_title).'.html');
         }
     }
 }

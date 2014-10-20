@@ -7,7 +7,7 @@
         <ul class="nav nav-pills nav-stacked">
             <li><a href="<?php echo base_url('event')?>"><strong>Kajian Hari Ini</strong></a></li>
             <?php foreach ($event as $key) {
-                if ($key->event_date_start >= date('Y-m-d') AND $key->event_date_end <= date('Y-m-d') ) {
+                if ($key->event_date_start >= date('Y-m-d') AND date('Y-m-d') <= $key->event_date_end  ) {
                     ?>
                     <li><a href="<?php echo base_url('event')?>"><?php echo $key->event_title?></a></li>
                     <?php

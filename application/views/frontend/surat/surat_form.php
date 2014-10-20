@@ -30,6 +30,11 @@
                             <textarea name="content" class="form-control"></textarea>
                         </div>
                     </div>
+                    <br>
+                    <div style="display: none;">
+                        <p class="alert alert-danger">Kolom dibawah ini jangan diisi untuk menandai anda bukan BOT</p>
+                        <input type="text" name="tipu" class="form-control">
+                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <input type="submit" class="btn btn-primary" value="Kirim">
@@ -39,8 +44,8 @@
                 </div>
                 <div class="col-md-6">
                     <div class="box-question">
-                        Masukkan nama dan email anda pada kolom yang telah disediakan disamping untuk mengajukan pertanyaan,
-                        Pernayaan anda akan dijawab lewat postingan dan akan dikirim ke email.
+                        Masukkan nama dan email anda pada kolom yang telah disediakan disamping untuk mengajukan pertanyaan.
+                        Pertanyaan anda akan dijawab melalui postingan dan akan dikirim ke email.
                     </div>
                 </div>
             </div>
@@ -49,7 +54,7 @@
 </div><!--/blog-post-area-->
 <script src="<?php echo base_url('media/tinymce/tinymce.min.js'); ?>"></script>
 <script>
-    tinymce.init({
+tinymce.init({
         menu: {// this is the complete default configuration
             file: {title: 'File', items: 'newdocument'},
             edit: {title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall'},
@@ -60,12 +65,12 @@
             tools: {title: 'Tools', items: 'spellchecker code'}
         }
     });
-    tinymce.init({
-        selector: 'textarea',
-        plugins: "table",
-        tools: "inserttable",
-        plugins: "paste",
-                paste_as_text: true
-    });
+tinymce.init({
+    selector: 'textarea',
+    plugins: "table",
+    tools: "inserttable",
+    plugins: "paste",
+    paste_as_text: true
+});
 </script>
 

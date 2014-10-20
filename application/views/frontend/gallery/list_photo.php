@@ -11,7 +11,7 @@
                 <div class="post-meta">
                     <a class="fancybox" title="<h4><?php echo $key->gallery_title?></h4><?php echo $key->gallery_description?>" href="<?php echo $key->gallery_url;?>" data-fancybox-group="gallery">
                     <div class="imgLiquidFill" style="width:180px ; height: 150px;">
-                        <img src="<?php echo $key->gallery_url ?>">
+                        <img src="<?php echo $key->gallery_url ?>" alt="<?php echo $key->gallery_title?>">
                     </div>
                     </a>
                 </div>

@@ -9,6 +9,10 @@ if (isset($profile)) {
 	$description = $profile->profile_description;
 	$organisation = $profile->profile_organisation;
 	$image = $profile->profile_image;
+	$phone = $profile->profile_phone;
+	$pin = $profile->profile_pin;
+	$fb = $profile->profile_fb;
+	$twitter = $profile->profile_twitter;
 	echo validation_errors();
 	echo form_open_multipart(current_url());
 }
@@ -53,6 +57,31 @@ if (isset($profile)) {
 	
 </div>
 <div class="col-md-4">
+	<div class="row">
+		<div class="col-md-12">
+			<label>Telepon</label><br>
+			<input type="text" name="phone" class="form-control" value="<?php echo $phone?>"><br>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Pin BB</label><br>
+			<input type="text" name="pin" class="form-control" value="<?php echo $pin?>"><br>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Facebook</label><br>
+			<input type="text" name="fb" class="form-control" value="<?php echo $fb?>"><br>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<label>Twitter</label><br>
+			<input type="text" name="twitter" class="form-control" value="<?php echo $twitter?>"><br>
+		</div>
+	</div>
+	<hr>
 	<label>Aksi</label><br>
 	<input type="submit" value="Simpan" class="btn btn-primary">
 	<a href="<?php echo site_url('pengelola/profile')?>" class="btn btn-success">Batal</a>

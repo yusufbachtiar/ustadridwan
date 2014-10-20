@@ -16,5 +16,6 @@
 		<?php
 	}
 	?>
+	<hr>
 </div><!--/blog-post-area-->
 <?php echo $this->pagination->create_links()?>

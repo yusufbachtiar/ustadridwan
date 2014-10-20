@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordian" href="#<?php echo $key->post_cat_id?>">
-                            <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                            <span class="badge pull-right"><i class="fa fa-chevron-right"></i></span>
                             <?php echo $key->post_cat_name?>
                         </a>
                     </h4>

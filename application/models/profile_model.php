@@ -30,6 +30,18 @@ Class Profile_model extends CI_Model{
 		if (isset($param['photo'])) {
 			$this->db->set('profile_image', $param['photo']);
 		}
+		if (isset($param['phone'])) {
+			$this->db->set('profile_phone', $param['phone']);
+		}
+		if (isset($param['pin'])) {
+			$this->db->set('profile_pin', $param['pin']);
+		}
+		if (isset($param['fb'])) {
+			$this->db->set('profile_fb', $param['fb']);
+		}
+		if (isset($param['twitter'])) {
+			$this->db->set('profile_twitter', $param['twitter']);
+		}
 
 		if (isset($param['id'])) {
 			$this->db->where('profile_id', $param['id']);

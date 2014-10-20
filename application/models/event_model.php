@@ -18,7 +18,7 @@ Class Event_model extends CI_Model{
 
 		if (isset($param['now'])) {
 			$this->db->where('event_date_start >=', date('Y-m-d'));
-			$this->db->where('event_date_end <=', date('Y-m-d'));
+			$this->db->where('event_date_end >=', date('Y-m-d'));
 		}
 
 		if (isset($param['coming'])) {

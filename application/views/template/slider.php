@@ -15,7 +15,7 @@
                                 <h1><span>Ahmad </span>Ridwan, Lc.</h1>
                                 <h2>Anda bertanya, saya menjawab</h2>
                                 <p></p>
-                                <button type="button" class="btn btn-default get">Kirim Pertanyaan</button>
+                                <a href="<?php echo base_url('surat/form')?>" class="btn btn-default get">Kirim Pertanyaan</a>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<?php echo base_url();?>media/images/ustadz1.png" class="girl img-responsive" alt="" />
@@ -27,7 +27,7 @@
                                 <h1><span>Ahmad </span>Ridwan, Lc.</h1>
                                 <h2>Info Kajian dan Artikel Islami</h2>
                                 <p></p>
-                                <button type="button" class="btn btn-default get">Info Kajian</button>
+                                <a href="<?php echo base_url('event')?>" class="btn btn-default get">Info Kajian</a>
                             </div>
                             <div class="col-sm-6">
                                 <img src="<?php echo base_url();?>media/images/ustadz2.png" class="girl img-responsive" alt="" />
